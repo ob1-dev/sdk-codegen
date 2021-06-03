@@ -48,6 +48,7 @@ import {
   LoginForm,
   Loading,
   DocSdkCalls,
+  ErrorBoundary,
 } from './components'
 import {
   createRequestParams,
@@ -230,13 +231,15 @@ export const RunIt: FC<RunItProps> = ({
             loading={loading}
             message={`${httpMethod} ${pathify(endpoint, activePathParams)}`}
           />
-          {responseContent && (
-            <ShowResponse
-              response={responseContent}
-              verb={httpMethod}
-              path={pathify(endpoint, activePathParams)}
-            />
-          )}
+          <ErrorBoundary>
+            {responseContent && (
+              <ShowResponse
+                response={responseContent}
+                verb={httpMethod}
+                path={pathify(endpoint, activePathParams)}
+              />
+            )}
+          </ErrorBoundary>
         </TabPanel>
         {isExtension ? (
           <></>

@@ -23,13 +23,4 @@
  SOFTWARE.
 
  */
-
-export * from './RequestForm'
-export * from './ShowResponse'
-export * from './MethodBadge'
-export * from './ConfigForm'
-export * from './LoginForm'
-export * from './Loading'
-export * from './DocSdkCalls'
-export * from './DataGrid'
-export * from './ErrorBoundary'
+export { ErrorBoundary } from './ErrorBoundary'

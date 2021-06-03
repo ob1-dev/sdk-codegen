@@ -28,6 +28,7 @@ import React, { FC } from 'react'
 import { Heading } from '@looker/components'
 import { IRawResponse } from '@looker/sdk-rtl'
 
+import { ErrorBoundary } from '..'
 import { pickResponseHandler } from './responseUtils'
 
 interface ShowResponseProps {
@@ -52,11 +53,11 @@ export const ShowResponse: FC<ShowResponseProps> = ({
   // TODO make a badge for the verb.
   // Once we are satisfied with the badge in the api-explorer package it should be moved here
   return (
-    <>
+    <ErrorBoundary>
       <Heading as="h4">{`${verb || ''} ${path || ''} ${response.statusCode}: ${
         response.contentType
       }`}</Heading>
       {pickedHandler && pickedHandler.component(response)}
-    </>
+    </ErrorBoundary>
   )
 }
