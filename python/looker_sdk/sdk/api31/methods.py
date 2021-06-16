@@ -83,7 +83,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"client_id": client_id, "client_secret": client_secret},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.AccessToken)
         return response
 
     # ### Create an access token that runs as a given user.
@@ -122,7 +121,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"associative": associative},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.AccessToken)
         return response
 
     # ### Logout of the API and invalidate the current access token.
@@ -133,7 +131,6 @@ class Looker31SDK(api_methods.APIMethods):
     ) -> str:
         """Logout"""
         response = self.delete(f"/logout", str, transport_options=transport_options)
-        assert isinstance(response, str)
         return response
 
     # endregion
@@ -188,7 +185,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.EmbedUrlResponse)
         return response
 
     # ### Get the LDAP configuration.
@@ -216,7 +212,6 @@ class Looker31SDK(api_methods.APIMethods):
         response = self.get(
             f"/ldap_config", models.LDAPConfig, transport_options=transport_options
         )
-        assert isinstance(response, models.LDAPConfig)
         return response
 
     # ### Update the LDAP configuration.
@@ -244,7 +239,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.LDAPConfig)
         return response
 
     # ### Test the connection settings for an LDAP configuration.
@@ -279,7 +273,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.LDAPConfigTestResult)
         return response
 
     # ### Test the connection authentication settings for an LDAP configuration.
@@ -316,7 +309,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.LDAPConfigTestResult)
         return response
 
     # ### Test the user authentication settings for an LDAP configuration without authenticating the user.
@@ -342,7 +334,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.LDAPConfigTestResult)
         return response
 
     # ### Test the user authentication settings for an LDAP configuration.
@@ -368,7 +359,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.LDAPConfigTestResult)
         return response
 
     # ### Get the OIDC configuration.
@@ -392,7 +382,6 @@ class Looker31SDK(api_methods.APIMethods):
         response = self.get(
             f"/oidc_config", models.OIDCConfig, transport_options=transport_options
         )
-        assert isinstance(response, models.OIDCConfig)
         return response
 
     # ### Update the OIDC configuration.
@@ -418,7 +407,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.OIDCConfig)
         return response
 
     # ### Get a OIDC test configuration by test_slug.
@@ -437,7 +425,6 @@ class Looker31SDK(api_methods.APIMethods):
             models.OIDCConfig,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.OIDCConfig)
         return response
 
     # ### Delete a OIDC test configuration.
@@ -454,7 +441,6 @@ class Looker31SDK(api_methods.APIMethods):
         response = self.delete(
             f"/oidc_test_configs/{test_slug}", str, transport_options=transport_options
         )
-        assert isinstance(response, str)
         return response
 
     # ### Create a OIDC test configuration.
@@ -472,7 +458,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.OIDCConfig)
         return response
 
     # ### Get password config.
@@ -487,7 +472,6 @@ class Looker31SDK(api_methods.APIMethods):
             models.PasswordConfig,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.PasswordConfig)
         return response
 
     # ### Update password config.
@@ -505,7 +489,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.PasswordConfig)
         return response
 
     # ### Force all credentials_email users to reset their login passwords upon their next login.
@@ -520,7 +503,6 @@ class Looker31SDK(api_methods.APIMethods):
             str,
             transport_options=transport_options,
         )
-        assert isinstance(response, str)
         return response
 
     # ### Get the SAML configuration.
@@ -544,7 +526,6 @@ class Looker31SDK(api_methods.APIMethods):
         response = self.get(
             f"/saml_config", models.SamlConfig, transport_options=transport_options
         )
-        assert isinstance(response, models.SamlConfig)
         return response
 
     # ### Update the SAML configuration.
@@ -570,7 +551,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.SamlConfig)
         return response
 
     # ### Get a SAML test configuration by test_slug.
@@ -589,7 +569,6 @@ class Looker31SDK(api_methods.APIMethods):
             models.SamlConfig,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.SamlConfig)
         return response
 
     # ### Delete a SAML test configuration.
@@ -606,7 +585,6 @@ class Looker31SDK(api_methods.APIMethods):
         response = self.delete(
             f"/saml_test_configs/{test_slug}", str, transport_options=transport_options
         )
-        assert isinstance(response, str)
         return response
 
     # ### Create a SAML test configuration.
@@ -624,7 +602,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.SamlConfig)
         return response
 
     # ### Parse the given xml as a SAML IdP metadata document and return the result.
@@ -640,7 +617,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.SamlMetadataParseResult)
         return response
 
     # ### Fetch the given url and parse it as a SAML IdP metadata document and return the result.
@@ -658,7 +634,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.SamlMetadataParseResult)
         return response
 
     # ### Get session config.
@@ -673,7 +648,6 @@ class Looker31SDK(api_methods.APIMethods):
             models.SessionConfig,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.SessionConfig)
         return response
 
     # ### Update session config.
@@ -691,7 +665,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.SessionConfig)
         return response
 
     # ### Get currently locked-out users.
@@ -710,7 +683,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Search currently locked-out users.
@@ -755,7 +727,6 @@ class Looker31SDK(api_methods.APIMethods):
             },
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Removes login lockout for the associated user.
@@ -772,7 +743,6 @@ class Looker31SDK(api_methods.APIMethods):
         response = self.delete(
             f"/user_login_lockout/{key}", str, transport_options=transport_options
         )
-        assert isinstance(response, str)
         return response
 
     # endregion
@@ -802,7 +772,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Create a custom color collection with the specified information
@@ -828,7 +797,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.ColorCollection)
         return response
 
     # ### Get an array of all existing **Custom** Color Collections
@@ -852,7 +820,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Get an array of all existing **Standard** Color Collections
@@ -876,7 +843,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Get the default color collection
@@ -895,7 +861,6 @@ class Looker31SDK(api_methods.APIMethods):
             models.ColorCollection,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.ColorCollection)
         return response
 
     # ### Set the global default Color Collection by ID
@@ -917,7 +882,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"collection_id": collection_id},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.ColorCollection)
         return response
 
     # ### Get a Color Collection by ID
@@ -948,7 +912,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.ColorCollection)
         return response
 
     # ### Update a custom color collection by id.
@@ -970,7 +933,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.ColorCollection)
         return response
 
     # ### Delete a custom color collection by id
@@ -996,7 +958,6 @@ class Looker31SDK(api_methods.APIMethods):
             str,
             transport_options=transport_options,
         )
-        assert isinstance(response, str)
         return response
 
     # endregion
@@ -1015,7 +976,6 @@ class Looker31SDK(api_methods.APIMethods):
             models.BackupConfiguration,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.BackupConfiguration)
         return response
 
     # ### WARNING: The Looker internal database backup function has been deprecated.
@@ -1033,7 +993,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.BackupConfiguration)
         return response
 
     # Get the current Cloud Storage Configuration.
@@ -1048,7 +1007,6 @@ class Looker31SDK(api_methods.APIMethods):
             models.BackupConfiguration,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.BackupConfiguration)
         return response
 
     # Update the current Cloud Storage Configuration.
@@ -1066,7 +1024,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.BackupConfiguration)
         return response
 
     # ### Get the current status and content of custom welcome emails
@@ -1081,7 +1038,6 @@ class Looker31SDK(api_methods.APIMethods):
             models.CustomWelcomeEmail,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.CustomWelcomeEmail)
         return response
 
     # Update custom welcome email setting and values. Optionally send a test email with the new content to the currently logged in user.
@@ -1102,7 +1058,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.CustomWelcomeEmail)
         return response
 
     # Requests to this endpoint will send a welcome email with the custom content provided in the body to the currently logged in user.
@@ -1120,7 +1075,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.WelcomeEmailTest)
         return response
 
     # ### Retrieve the value for whether or not digest emails is enabled
@@ -1135,7 +1089,6 @@ class Looker31SDK(api_methods.APIMethods):
             models.DigestEmails,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.DigestEmails)
         return response
 
     # ### Update the setting for enabling/disabling digest emails
@@ -1153,7 +1106,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.DigestEmails)
         return response
 
     # ### Trigger the generation of digest email records and send them to Looker's internal system. This does not send
@@ -1170,7 +1122,6 @@ class Looker31SDK(api_methods.APIMethods):
             models.DigestEmailSend,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.DigestEmailSend)
         return response
 
     # ### Set the menu item name and content for internal help resources
@@ -1185,7 +1136,6 @@ class Looker31SDK(api_methods.APIMethods):
             models.InternalHelpResourcesContent,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.InternalHelpResourcesContent)
         return response
 
     # Update internal help resources content
@@ -1203,7 +1153,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.InternalHelpResourcesContent)
         return response
 
     # ### Get and set the options for internal help resources
@@ -1218,7 +1167,6 @@ class Looker31SDK(api_methods.APIMethods):
             models.InternalHelpResources,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.InternalHelpResources)
         return response
 
     # Update internal help resources settings
@@ -1236,7 +1184,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.InternalHelpResources)
         return response
 
     # ### Get all legacy features.
@@ -1251,7 +1198,6 @@ class Looker31SDK(api_methods.APIMethods):
             Sequence[models.LegacyFeature],
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Get information about the legacy feature with a specific id.
@@ -1269,7 +1215,6 @@ class Looker31SDK(api_methods.APIMethods):
             models.LegacyFeature,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.LegacyFeature)
         return response
 
     # ### Update information about the legacy feature with a specific id.
@@ -1289,7 +1234,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.LegacyFeature)
         return response
 
     # ### Get a list of locales that Looker supports.
@@ -1302,7 +1246,6 @@ class Looker31SDK(api_methods.APIMethods):
         response = self.get(
             f"/locales", Sequence[models.Locale], transport_options=transport_options
         )
-        assert isinstance(response, list)
         return response
 
     # ### Get a list of timezones that Looker supports (e.g. useful for scheduling tasks).
@@ -1317,7 +1260,6 @@ class Looker31SDK(api_methods.APIMethods):
             Sequence[models.Timezone],
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Get information about all API versions supported by this Looker instance.
@@ -1336,7 +1278,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.ApiVersion)
         return response
 
     # ### This feature is enabled only by special license.
@@ -1356,7 +1297,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.WhitelabelConfiguration)
         return response
 
     # ### Update the whitelabel configuration
@@ -1374,7 +1314,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.WhitelabelConfiguration)
         return response
 
     # endregion
@@ -1397,7 +1336,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Create a connection using the specified configuration.
@@ -1415,7 +1353,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.DBConnection)
         return response
 
     # ### Get information about a connection.
@@ -1437,7 +1374,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.DBConnection)
         return response
 
     # ### Update a connection using the specified configuration.
@@ -1458,7 +1394,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.DBConnection)
         return response
 
     # ### Delete a connection.
@@ -1475,7 +1410,6 @@ class Looker31SDK(api_methods.APIMethods):
         response = self.delete(
             f"/connections/{connection_name}", str, transport_options=transport_options
         )
-        assert isinstance(response, str)
         return response
 
     # ### Delete a connection override.
@@ -1497,7 +1431,6 @@ class Looker31SDK(api_methods.APIMethods):
             str,
             transport_options=transport_options,
         )
-        assert isinstance(response, str)
         return response
 
     # ### Test an existing connection.
@@ -1526,7 +1459,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"tests": tests},
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Test a connection configuration.
@@ -1554,7 +1486,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Get information about all dialects.
@@ -1573,7 +1504,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # endregion
@@ -1646,7 +1576,6 @@ class Looker31SDK(api_methods.APIMethods):
             },
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Get favorite content by its id
@@ -1667,7 +1596,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.ContentFavorite)
         return response
 
     # ### Delete favorite content
@@ -1685,7 +1613,6 @@ class Looker31SDK(api_methods.APIMethods):
             str,
             transport_options=transport_options,
         )
-        assert isinstance(response, str)
         return response
 
     # ### Create favorite content
@@ -1703,7 +1630,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.ContentFavorite)
         return response
 
     # ### Get information about all content metadata in a space.
@@ -1724,7 +1650,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"parent_id": parent_id, "fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Get information about an individual content metadata record.
@@ -1745,7 +1670,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.ContentMeta)
         return response
 
     # ### Move a piece of content.
@@ -1765,7 +1689,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.ContentMeta)
         return response
 
     # ### All content metadata access records for a content metadata item.
@@ -1786,7 +1709,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"content_metadata_id": content_metadata_id, "fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Create content metadata access.
@@ -1809,7 +1731,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.ContentMetaGroupUser)
         return response
 
     # ### Update type of access for content metadata.
@@ -1829,7 +1750,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.ContentMetaGroupUser)
         return response
 
     # ### Remove content metadata access.
@@ -1847,7 +1767,6 @@ class Looker31SDK(api_methods.APIMethods):
             str,
             transport_options=transport_options,
         )
-        assert isinstance(response, str)
         return response
 
     # ### Get an image representing the contents of a dashboard or look.
@@ -1886,7 +1805,6 @@ class Looker31SDK(api_methods.APIMethods):
             },
             transport_options=transport_options,
         )
-        assert isinstance(response, (str, bytes))
         return response
 
     # ### Validate All Content
@@ -1908,7 +1826,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.ContentValidation)
         return response
 
     # ### Search Content Views
@@ -1986,7 +1903,6 @@ class Looker31SDK(api_methods.APIMethods):
             },
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Get a vector image representing the contents of a dashboard or look.
@@ -2016,7 +1932,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"reload": reload},
             transport_options=transport_options,
         )
-        assert isinstance(response, str)
         return response
 
     # endregion
@@ -2045,7 +1960,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Create a new dashboard
@@ -2076,7 +1990,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.Dashboard)
         return response
 
     # ### Search Dashboards
@@ -2179,7 +2092,6 @@ class Looker31SDK(api_methods.APIMethods):
             },
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Import a LookML dashboard to a space as a UDD
@@ -2217,7 +2129,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.Dashboard)
         return response
 
     # ### Update all linked dashboards to match the specified LookML dashboard.
@@ -2249,7 +2160,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Get information about a dashboard
@@ -2277,7 +2187,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.Dashboard)
         return response
 
     # ### Update a dashboard
@@ -2307,7 +2216,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.Dashboard)
         return response
 
     # ### Delete the dashboard with the specified id
@@ -2330,7 +2238,6 @@ class Looker31SDK(api_methods.APIMethods):
         response = self.delete(
             f"/dashboards/{dashboard_id}", str, transport_options=transport_options
         )
-        assert isinstance(response, str)
         return response
 
     # ### Get Aggregate Table LookML for Each Query on a Dahboard
@@ -2351,7 +2258,6 @@ class Looker31SDK(api_methods.APIMethods):
             models.DashboardAggregateTableLookml,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.DashboardAggregateTableLookml)
         return response
 
     # ### Get lookml of a UDD
@@ -2372,7 +2278,6 @@ class Looker31SDK(api_methods.APIMethods):
             models.DashboardLookml,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.DashboardLookml)
         return response
 
     # ### Search Dashboard Elements
@@ -2434,7 +2339,6 @@ class Looker31SDK(api_methods.APIMethods):
             },
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Get information about the dashboard element with a specific id.
@@ -2456,7 +2360,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.DashboardElement)
         return response
 
     # ### Update the dashboard element with a specific id.
@@ -2480,7 +2383,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.DashboardElement)
         return response
 
     # ### Delete a dashboard element with a specific id.
@@ -2499,7 +2401,6 @@ class Looker31SDK(api_methods.APIMethods):
             str,
             transport_options=transport_options,
         )
-        assert isinstance(response, str)
         return response
 
     # ### Get information about all the dashboard elements on a dashboard with a specific id.
@@ -2521,7 +2422,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Create a dashboard element on the dashboard with a specific id.
@@ -2542,7 +2442,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.DashboardElement)
         return response
 
     # ### Get information about the dashboard filters with a specific id.
@@ -2564,7 +2463,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.DashboardFilter)
         return response
 
     # ### Update the dashboard filter with a specific id.
@@ -2588,7 +2486,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.DashboardFilter)
         return response
 
     # ### Delete a dashboard filter with a specific id.
@@ -2607,7 +2504,6 @@ class Looker31SDK(api_methods.APIMethods):
             str,
             transport_options=transport_options,
         )
-        assert isinstance(response, str)
         return response
 
     # ### Get information about all the dashboard filters on a dashboard with a specific id.
@@ -2629,7 +2525,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Create a dashboard filter on the dashboard with a specific id.
@@ -2650,7 +2545,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.DashboardFilter)
         return response
 
     # ### Get information about the dashboard elements with a specific id.
@@ -2674,7 +2568,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.DashboardLayoutComponent)
         return response
 
     # ### Update the dashboard element with a specific id.
@@ -2700,7 +2593,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.DashboardLayoutComponent)
         return response
 
     # ### Get information about all the dashboard layout components for a dashboard layout with a specific id.
@@ -2722,7 +2614,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Get information about the dashboard layouts with a specific id.
@@ -2744,7 +2635,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.DashboardLayout)
         return response
 
     # ### Update the dashboard layout with a specific id.
@@ -2768,7 +2658,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.DashboardLayout)
         return response
 
     # ### Delete a dashboard layout with a specific id.
@@ -2787,7 +2676,6 @@ class Looker31SDK(api_methods.APIMethods):
             str,
             transport_options=transport_options,
         )
-        assert isinstance(response, str)
         return response
 
     # ### Get information about all the dashboard elements on a dashboard with a specific id.
@@ -2809,7 +2697,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Create a dashboard layout on the dashboard with a specific id.
@@ -2830,7 +2717,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.DashboardLayout)
         return response
 
     # endregion
@@ -2852,7 +2738,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.DataActionResponse)
         return response
 
     # For some data actions, the remote server may supply a form requesting further user input. This endpoint takes a data action, asks the remote server to generate a form for it, and returns that form to you for presentation to the user.
@@ -2870,7 +2755,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.DataActionForm)
         return response
 
     # endregion
@@ -2889,7 +2773,6 @@ class Looker31SDK(api_methods.APIMethods):
             Sequence[models.Datagroup],
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Get information about a datagroup.
@@ -2908,7 +2791,6 @@ class Looker31SDK(api_methods.APIMethods):
             models.Datagroup,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.Datagroup)
         return response
 
     # ### Update a datagroup using the specified params.
@@ -2929,7 +2811,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.Datagroup)
         return response
 
     # endregion
@@ -2987,7 +2868,6 @@ class Looker31SDK(api_methods.APIMethods):
             },
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Get information about the folder with a specific id.
@@ -3009,7 +2889,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.Folder)
         return response
 
     # ### Update the folder with a specific id.
@@ -3030,7 +2909,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.Folder)
         return response
 
     # ### Delete the folder with a specific id including any children folders.
@@ -3048,7 +2926,6 @@ class Looker31SDK(api_methods.APIMethods):
         response = self.delete(
             f"/folders/{folder_id}", str, transport_options=transport_options
         )
-        assert isinstance(response, str)
         return response
 
     # ### Get information about all folders.
@@ -3070,7 +2947,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Create a folder with specified information.
@@ -3088,7 +2964,6 @@ class Looker31SDK(api_methods.APIMethods):
         response = self.post(
             f"/folders", models.Folder, body=body, transport_options=transport_options
         )
-        assert isinstance(response, models.Folder)
         return response
 
     # ### Get the children of a folder.
@@ -3121,7 +2996,6 @@ class Looker31SDK(api_methods.APIMethods):
             },
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Search the children of a folder
@@ -3147,7 +3021,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields, "sorts": sorts, "name": name},
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Get the parent of a folder
@@ -3169,7 +3042,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.Folder)
         return response
 
     # ### Get the ancestors of a folder
@@ -3191,7 +3063,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Get all looks in a folder.
@@ -3215,7 +3086,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Get the dashboards in a folder
@@ -3237,7 +3107,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # endregion
@@ -3280,7 +3149,6 @@ class Looker31SDK(api_methods.APIMethods):
             },
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Creates a new group (admin only).
@@ -3301,7 +3169,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.Group)
         return response
 
     # ### Search groups
@@ -3372,7 +3239,6 @@ class Looker31SDK(api_methods.APIMethods):
             },
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Get information about a group.
@@ -3393,7 +3259,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.Group)
         return response
 
     # ### Updates the a group (admin only).
@@ -3416,7 +3281,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.Group)
         return response
 
     # ### Deletes a group (admin only).
@@ -3432,7 +3296,6 @@ class Looker31SDK(api_methods.APIMethods):
         response = self.delete(
             f"/groups/{group_id}", str, transport_options=transport_options
         )
-        assert isinstance(response, str)
         return response
 
     # ### Get information about all the groups in a group
@@ -3453,7 +3316,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Adds a new group to a group.
@@ -3473,7 +3335,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.Group)
         return response
 
     # ### Get information about all the users directly included in a group.
@@ -3505,7 +3366,6 @@ class Looker31SDK(api_methods.APIMethods):
             },
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Adds a new user to a group.
@@ -3525,7 +3385,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.User)
         return response
 
     # ### Removes a user from a group.
@@ -3545,7 +3404,6 @@ class Looker31SDK(api_methods.APIMethods):
             None,
             transport_options=transport_options,
         )
-        assert response is None
         return response
 
     # ### Removes a group from a group.
@@ -3565,7 +3423,6 @@ class Looker31SDK(api_methods.APIMethods):
             None,
             transport_options=transport_options,
         )
-        assert response is None
         return response
 
     # ### Set the value of a user attribute for a group.
@@ -3589,7 +3446,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.UserAttributeGroupValue)
         return response
 
     # ### Remove a user attribute value from a group.
@@ -3609,7 +3465,6 @@ class Looker31SDK(api_methods.APIMethods):
             None,
             transport_options=transport_options,
         )
-        assert response is None
         return response
 
     # endregion
@@ -3632,7 +3487,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Create a new homepage.
@@ -3653,7 +3507,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.Homepage)
         return response
 
     # ### Search Homepages
@@ -3731,7 +3584,6 @@ class Looker31SDK(api_methods.APIMethods):
             },
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Get information about a homepage.
@@ -3752,7 +3604,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.Homepage)
         return response
 
     # ### Update a homepage definition.
@@ -3775,7 +3626,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.Homepage)
         return response
 
     # ### Delete a homepage.
@@ -3791,7 +3641,6 @@ class Looker31SDK(api_methods.APIMethods):
         response = self.delete(
             f"/homepages/{homepage_id}", str, transport_options=transport_options
         )
-        assert isinstance(response, str)
         return response
 
     # ### Get information about all homepage items.
@@ -3818,7 +3667,6 @@ class Looker31SDK(api_methods.APIMethods):
             },
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Create a new homepage item.
@@ -3839,7 +3687,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.HomepageItem)
         return response
 
     # ### Get information about a homepage item.
@@ -3860,7 +3707,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.HomepageItem)
         return response
 
     # ### Update a homepage item definition.
@@ -3883,7 +3729,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.HomepageItem)
         return response
 
     # ### Delete a homepage item.
@@ -3901,7 +3746,6 @@ class Looker31SDK(api_methods.APIMethods):
             str,
             transport_options=transport_options,
         )
-        assert isinstance(response, str)
         return response
 
     # ### Get information about all homepage sections.
@@ -3922,7 +3766,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields, "sorts": sorts},
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Create a new homepage section.
@@ -3943,7 +3786,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.HomepageSection)
         return response
 
     # ### Get information about a homepage section.
@@ -3964,7 +3806,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.HomepageSection)
         return response
 
     # ### Update a homepage section definition.
@@ -3987,7 +3828,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.HomepageSection)
         return response
 
     # ### Delete a homepage section.
@@ -4005,7 +3845,6 @@ class Looker31SDK(api_methods.APIMethods):
             str,
             transport_options=transport_options,
         )
-        assert isinstance(response, str)
         return response
 
     # ### Get information about the primary homepage's sections.
@@ -4024,7 +3863,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # endregion
@@ -4047,7 +3885,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Create a new Integration Hub.
@@ -4070,7 +3907,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.IntegrationHub)
         return response
 
     # ### Get information about a Integration Hub.
@@ -4091,7 +3927,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.IntegrationHub)
         return response
 
     # ### Update a Integration Hub definition.
@@ -4116,7 +3951,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.IntegrationHub)
         return response
 
     # ### Delete a Integration Hub.
@@ -4134,7 +3968,6 @@ class Looker31SDK(api_methods.APIMethods):
             str,
             transport_options=transport_options,
         )
-        assert isinstance(response, str)
         return response
 
     # Accepts the legal agreement for a given integration hub. This only works for integration hubs that have legal_agreement_required set to true and legal_agreement_signed set to false.
@@ -4152,7 +3985,6 @@ class Looker31SDK(api_methods.APIMethods):
             models.IntegrationHub,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.IntegrationHub)
         return response
 
     # ### Get information about all Integrations.
@@ -4173,7 +4005,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields, "integration_hub_id": integration_hub_id},
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Get information about a Integration.
@@ -4195,7 +4026,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.Integration)
         return response
 
     # ### Update parameters on a Integration.
@@ -4219,7 +4049,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.Integration)
         return response
 
     # Returns the Integration form for presentation to the user.
@@ -4240,7 +4069,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.DataActionForm)
         return response
 
     # Tests the integration to make sure all the settings are working.
@@ -4259,7 +4087,6 @@ class Looker31SDK(api_methods.APIMethods):
             models.IntegrationTestResult,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.IntegrationTestResult)
         return response
 
     # endregion
@@ -4288,7 +4115,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Create a Look
@@ -4315,7 +4141,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.LookWithQuery)
         return response
 
     # ### Search Looks
@@ -4410,7 +4235,6 @@ class Looker31SDK(api_methods.APIMethods):
             },
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Get a Look.
@@ -4433,7 +4257,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.LookWithQuery)
         return response
 
     # ### Modify a Look
@@ -4475,7 +4298,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.LookWithQuery)
         return response
 
     # ### Permanently Delete a Look
@@ -4497,7 +4319,6 @@ class Looker31SDK(api_methods.APIMethods):
         response = self.delete(
             f"/looks/{look_id}", str, transport_options=transport_options
         )
-        assert isinstance(response, str)
         return response
 
     # ### Run a Look
@@ -4573,7 +4394,6 @@ class Looker31SDK(api_methods.APIMethods):
             },
             transport_options=transport_options,
         )
-        assert isinstance(response, (str, bytes))
         return response
 
     # endregion
@@ -4601,7 +4421,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"format": format, "color": color},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.DependencyGraph)
         return response
 
     # ### Get information about all lookml models.
@@ -4620,7 +4439,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Create a lookml model using the specified configuration.
@@ -4638,7 +4456,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.LookmlModel)
         return response
 
     # ### Get information about a lookml model.
@@ -4660,7 +4477,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.LookmlModel)
         return response
 
     # ### Update a lookml model using the specified configuration.
@@ -4681,7 +4497,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.LookmlModel)
         return response
 
     # ### Delete a lookml model.
@@ -4700,7 +4515,6 @@ class Looker31SDK(api_methods.APIMethods):
             str,
             transport_options=transport_options,
         )
-        assert isinstance(response, str)
         return response
 
     # ### Get information about a lookml model explore.
@@ -4725,7 +4539,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.LookmlModelExplore)
         return response
 
     # endregion
@@ -4750,7 +4563,6 @@ class Looker31SDK(api_methods.APIMethods):
             Sequence[models.GitBranch],
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Get the Current Git Branch
@@ -4771,7 +4583,6 @@ class Looker31SDK(api_methods.APIMethods):
             models.GitBranch,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.GitBranch)
         return response
 
     # ### Checkout and/or reset --hard an existing Git Branch
@@ -4800,7 +4611,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.GitBranch)
         return response
 
     # ### Create and Checkout a Git Branch
@@ -4828,7 +4638,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.GitBranch)
         return response
 
     # ### Get the specified Git Branch
@@ -4852,7 +4661,6 @@ class Looker31SDK(api_methods.APIMethods):
             models.GitBranch,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.GitBranch)
         return response
 
     # ### Delete the specified Git Branch
@@ -4876,7 +4684,6 @@ class Looker31SDK(api_methods.APIMethods):
             str,
             transport_options=transport_options,
         )
-        assert isinstance(response, str)
         return response
 
     # ### Deploy a Remote Branch or Ref to Production
@@ -4908,7 +4715,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"branch": branch, "ref": ref},
             transport_options=transport_options,
         )
-        assert isinstance(response, str)
         return response
 
     # ### Deploy LookML from this Development Mode Project to Production
@@ -4938,7 +4744,6 @@ class Looker31SDK(api_methods.APIMethods):
             str,
             transport_options=transport_options,
         )
-        assert isinstance(response, str)
         return response
 
     # ### Reset a project to the revision of the project that is in production.
@@ -4959,7 +4764,6 @@ class Looker31SDK(api_methods.APIMethods):
             str,
             transport_options=transport_options,
         )
-        assert isinstance(response, str)
         return response
 
     # ### Reset a project development branch to the revision of the project that is on the remote.
@@ -4980,7 +4784,6 @@ class Looker31SDK(api_methods.APIMethods):
             str,
             transport_options=transport_options,
         )
-        assert isinstance(response, str)
         return response
 
     # ### Get All Projects
@@ -5001,7 +4804,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Create A Project
@@ -5022,7 +4824,6 @@ class Looker31SDK(api_methods.APIMethods):
         response = self.post(
             f"/projects", models.Project, body=body, transport_options=transport_options
         )
-        assert isinstance(response, models.Project)
         return response
 
     # ### Get A Project
@@ -5046,7 +4847,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.Project)
         return response
 
     # ### Update Project Configuration
@@ -5091,7 +4891,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.Project)
         return response
 
     # ### Get A Projects Manifest object
@@ -5112,7 +4911,6 @@ class Looker31SDK(api_methods.APIMethods):
             models.Manifest,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.Manifest)
         return response
 
     # ### Git Deploy Key
@@ -5133,7 +4931,6 @@ class Looker31SDK(api_methods.APIMethods):
             str,
             transport_options=transport_options,
         )
-        assert isinstance(response, str)
         return response
 
     # ### Create Git Deploy Key
@@ -5160,7 +4957,6 @@ class Looker31SDK(api_methods.APIMethods):
             str,
             transport_options=transport_options,
         )
-        assert isinstance(response, str)
         return response
 
     # ### Get Cached Project Validation Results
@@ -5193,7 +4989,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.ProjectValidationCache)
         return response
 
     # ### Validate Project
@@ -5223,7 +5018,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.ProjectValidation)
         return response
 
     # ### Get Project Workspace
@@ -5247,7 +5041,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.ProjectWorkspace)
         return response
 
     # ### Get All Project Files
@@ -5271,7 +5064,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Get Project File Info
@@ -5297,7 +5089,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"file_id": file_id, "fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.ProjectFile)
         return response
 
     # ### Get All Git Connection Tests
@@ -5328,7 +5119,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"remote_url": remote_url},
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Run a git connection test
@@ -5361,7 +5151,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"remote_url": remote_url, "use_production": use_production},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.GitConnectionTestResult)
         return response
 
     # ### Get All LookML Tests
@@ -5387,7 +5176,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"file_id": file_id},
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Run LookML Tests
@@ -5415,7 +5203,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"file_id": file_id, "test": test, "model": model},
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Creates a tag for the most recent commit, or a specific ref is a SHA is provided
@@ -5449,7 +5236,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.Project)
         return response
 
     # ### Configure Repository Credential for a remote dependency
@@ -5478,7 +5264,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.RepositoryCredential)
         return response
 
     # ### Repository Credential for a remote dependency
@@ -5505,7 +5290,6 @@ class Looker31SDK(api_methods.APIMethods):
             str,
             transport_options=transport_options,
         )
-        assert isinstance(response, str)
         return response
 
     # ### Get all Repository Credentials for a project
@@ -5526,7 +5310,6 @@ class Looker31SDK(api_methods.APIMethods):
             Sequence[models.RepositoryCredential],
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # endregion
@@ -5594,7 +5377,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.QueryTask)
         return response
 
     # ### Fetch results of multiple async queries
@@ -5619,7 +5401,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"query_task_ids": query_task_ids},
             transport_options=transport_options,
         )
-        assert isinstance(response, dict)
         return response
 
     # ### Get Query Task details
@@ -5647,7 +5428,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.QueryTask)
         return response
 
     # ### Get Async Query Results
@@ -5688,7 +5468,6 @@ class Looker31SDK(api_methods.APIMethods):
             str,
             transport_options=transport_options,
         )
-        assert isinstance(response, str)
         return response
 
     # ### Get a previously created query by id.
@@ -5725,7 +5504,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.Query)
         return response
 
     # ### Get the query for a given query slug.
@@ -5763,7 +5541,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.Query)
         return response
 
     # ### Create a query.
@@ -5791,7 +5568,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.Query)
         return response
 
     # ### Run a saved query.
@@ -5870,7 +5646,6 @@ class Looker31SDK(api_methods.APIMethods):
             },
             transport_options=transport_options,
         )
-        assert isinstance(response, (str, bytes))
         return response
 
     # ### Run the query that is specified inline in the posted body.
@@ -5978,7 +5753,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, (str, bytes))
         return response
 
     # ### Run an URL encoded query.
@@ -6054,7 +5828,6 @@ class Looker31SDK(api_methods.APIMethods):
             Union[str, bytes],  # type: ignore
             transport_options=transport_options,
         )
-        assert isinstance(response, (str, bytes))
         return response
 
     # ### Get Merge Query
@@ -6078,7 +5851,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.MergeQuery)
         return response
 
     # ### Create Merge Query
@@ -6115,7 +5887,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.MergeQuery)
         return response
 
     # Get information about all running queries.
@@ -6130,7 +5901,6 @@ class Looker31SDK(api_methods.APIMethods):
             Sequence[models.RunningQueries],
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # Kill a query with a specific query_task_id.
@@ -6149,7 +5919,6 @@ class Looker31SDK(api_methods.APIMethods):
             str,
             transport_options=transport_options,
         )
-        assert isinstance(response, str)
         return response
 
     # Get a SQL Runner query.
@@ -6166,7 +5935,6 @@ class Looker31SDK(api_methods.APIMethods):
         response = self.get(
             f"/sql_queries/{slug}", models.SqlQuery, transport_options=transport_options
         )
-        assert isinstance(response, models.SqlQuery)
         return response
 
     # ### Create a SQL Runner Query
@@ -6186,7 +5954,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.SqlQuery)
         return response
 
     # Execute a SQL Runner query in a given result_format.
@@ -6211,7 +5978,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"download": download},
             transport_options=transport_options,
         )
-        assert isinstance(response, (str, bytes))
         return response
 
     # endregion
@@ -6262,7 +6028,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.RenderTask)
         return response
 
     # ### Create a new task to render a look to an image.
@@ -6294,7 +6059,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"width": width, "height": height, "fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.RenderTask)
         return response
 
     # ### Create a new task to render an existing query to an image.
@@ -6326,7 +6090,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"width": width, "height": height, "fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.RenderTask)
         return response
 
     # ### Create a new task to render a dashboard to a document or image.
@@ -6370,7 +6133,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.RenderTask)
         return response
 
     # ### Get information about a render task.
@@ -6396,7 +6158,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.RenderTask)
         return response
 
     # ### Get the document or image produced by a completed render task.
@@ -6431,7 +6192,6 @@ class Looker31SDK(api_methods.APIMethods):
             bytes,
             transport_options=transport_options,
         )
-        assert isinstance(response, bytes)
         return response
 
     # endregion
@@ -6501,7 +6261,6 @@ class Looker31SDK(api_methods.APIMethods):
             },
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Get information about the model set with a specific id.
@@ -6522,7 +6281,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.ModelSet)
         return response
 
     # ### Update information about the model set with a specific id.
@@ -6542,7 +6300,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.ModelSet)
         return response
 
     # ### Delete the model set with a specific id.
@@ -6558,7 +6315,6 @@ class Looker31SDK(api_methods.APIMethods):
         response = self.delete(
             f"/model_sets/{model_set_id}", str, transport_options=transport_options
         )
-        assert isinstance(response, str)
         return response
 
     # ### Get information about all model sets.
@@ -6577,7 +6333,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Create a model set with the specified information. Model sets are used by Roles.
@@ -6595,7 +6350,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.ModelSet)
         return response
 
     # ### Get all supported permissions.
@@ -6610,7 +6364,6 @@ class Looker31SDK(api_methods.APIMethods):
             Sequence[models.Permission],
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Search permission sets
@@ -6676,7 +6429,6 @@ class Looker31SDK(api_methods.APIMethods):
             },
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Get information about the permission set with a specific id.
@@ -6697,7 +6449,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.PermissionSet)
         return response
 
     # ### Update information about the permission set with a specific id.
@@ -6717,7 +6468,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.PermissionSet)
         return response
 
     # ### Delete the permission set with a specific id.
@@ -6735,7 +6485,6 @@ class Looker31SDK(api_methods.APIMethods):
             str,
             transport_options=transport_options,
         )
-        assert isinstance(response, str)
         return response
 
     # ### Get information about all permission sets.
@@ -6754,7 +6503,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Create a permission set with the specified information. Permission sets are used by Roles.
@@ -6772,7 +6520,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.PermissionSet)
         return response
 
     # ### Get information about all roles.
@@ -6793,7 +6540,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields, "ids": ids},
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Create a role with the specified information.
@@ -6808,7 +6554,6 @@ class Looker31SDK(api_methods.APIMethods):
         response = self.post(
             f"/roles", models.Role, body=body, transport_options=transport_options
         )
-        assert isinstance(response, models.Role)
         return response
 
     # ### Search roles
@@ -6873,7 +6618,6 @@ class Looker31SDK(api_methods.APIMethods):
             },
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Get information about the role with a specific id.
@@ -6889,7 +6633,6 @@ class Looker31SDK(api_methods.APIMethods):
         response = self.get(
             f"/roles/{role_id}", models.Role, transport_options=transport_options
         )
-        assert isinstance(response, models.Role)
         return response
 
     # ### Update information about the role with a specific id.
@@ -6909,7 +6652,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.Role)
         return response
 
     # ### Delete the role with a specific id.
@@ -6925,7 +6667,6 @@ class Looker31SDK(api_methods.APIMethods):
         response = self.delete(
             f"/roles/{role_id}", str, transport_options=transport_options
         )
-        assert isinstance(response, str)
         return response
 
     # ### Get information about all the groups with the role that has a specific id.
@@ -6946,7 +6687,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Set all groups for a role, removing all existing group associations from that role.
@@ -6966,7 +6706,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Get information about all the users with the role that has a specific id.
@@ -6992,7 +6731,6 @@ class Looker31SDK(api_methods.APIMethods):
             },
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Set all the users of the role with a specific id.
@@ -7012,7 +6750,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # endregion
@@ -7039,7 +6776,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Get Information About a Scheduled Plan
@@ -7062,7 +6798,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.ScheduledPlan)
         return response
 
     # ### Update a Scheduled Plan
@@ -7123,7 +6858,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.ScheduledPlan)
         return response
 
     # ### Delete a Scheduled Plan
@@ -7145,7 +6879,6 @@ class Looker31SDK(api_methods.APIMethods):
             str,
             transport_options=transport_options,
         )
-        assert isinstance(response, str)
         return response
 
     # ### List All Scheduled Plans
@@ -7178,7 +6911,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"user_id": user_id, "fields": fields, "all_users": all_users},
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Create a Scheduled Plan
@@ -7253,7 +6985,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.ScheduledPlan)
         return response
 
     # ### Run a Scheduled Plan Immediately
@@ -7307,7 +7038,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.ScheduledPlan)
         return response
 
     # ### Get Scheduled Plans for a Look
@@ -7342,7 +7072,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"user_id": user_id, "fields": fields, "all_users": all_users},
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Get Scheduled Plans for a Dashboard
@@ -7377,7 +7106,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"user_id": user_id, "all_users": all_users, "fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Get Scheduled Plans for a LookML Dashboard
@@ -7413,7 +7141,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"user_id": user_id, "fields": fields, "all_users": all_users},
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Run a Scheduled Plan By Id Immediately
@@ -7479,7 +7206,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.ScheduledPlan)
         return response
 
     # endregion
@@ -7498,7 +7224,6 @@ class Looker31SDK(api_methods.APIMethods):
         response = self.get(
             f"/session", models.ApiSession, transport_options=transport_options
         )
-        assert isinstance(response, models.ApiSession)
         return response
 
     # ### Update API Session
@@ -7535,7 +7260,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.ApiSession)
         return response
 
     # endregion
@@ -7621,7 +7345,6 @@ class Looker31SDK(api_methods.APIMethods):
             },
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Get information about the space with a specific id.
@@ -7643,7 +7366,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.Space)
         return response
 
     # ### Update the space with a specific id.
@@ -7664,7 +7386,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.Space)
         return response
 
     # ### Delete the space with a specific id including any children spaces.
@@ -7682,7 +7403,6 @@ class Looker31SDK(api_methods.APIMethods):
         response = self.delete(
             f"/spaces/{space_id}", str, transport_options=transport_options
         )
-        assert isinstance(response, str)
         return response
 
     # ### Get information about all spaces.
@@ -7704,7 +7424,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Create a space with specified information.
@@ -7722,7 +7441,6 @@ class Looker31SDK(api_methods.APIMethods):
         response = self.post(
             f"/spaces", models.Space, body=body, transport_options=transport_options
         )
-        assert isinstance(response, models.Space)
         return response
 
     # ### Get the children of a space.
@@ -7755,7 +7473,6 @@ class Looker31SDK(api_methods.APIMethods):
             },
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Search the children of a space
@@ -7781,7 +7498,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields, "sorts": sorts, "name": name},
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Get the parent of a space
@@ -7803,7 +7519,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.Space)
         return response
 
     # ### Get the ancestors of a space
@@ -7825,7 +7540,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Get all looks in a space.
@@ -7849,7 +7563,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Get the dashboards in a space
@@ -7871,7 +7584,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # endregion
@@ -7900,7 +7612,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Create a theme
@@ -7929,7 +7640,6 @@ class Looker31SDK(api_methods.APIMethods):
         response = self.post(
             f"/themes", models.Theme, body=body, transport_options=transport_options
         )
-        assert isinstance(response, models.Theme)
         return response
 
     # ### Search all themes for matching criteria.
@@ -8011,7 +7721,6 @@ class Looker31SDK(api_methods.APIMethods):
             },
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Get the default theme
@@ -8036,7 +7745,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"ts": ts},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.Theme)
         return response
 
     # ### Set the global default theme by theme name
@@ -8065,7 +7773,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"name": name},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.Theme)
         return response
 
     # ### Get active themes
@@ -8096,7 +7803,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"name": name, "ts": ts, "fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Get the named theme if it's active. Otherwise, return the default theme
@@ -8122,7 +7828,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"name": name, "ts": ts},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.Theme)
         return response
 
     # ### Validate a theme with the specified information
@@ -8146,7 +7851,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.ValidationError)
         return response
 
     # ### Get a theme by ID
@@ -8172,7 +7876,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.Theme)
         return response
 
     # ### Update the theme by id.
@@ -8195,7 +7898,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.Theme)
         return response
 
     # ### Delete a specific theme by id
@@ -8220,7 +7922,6 @@ class Looker31SDK(api_methods.APIMethods):
         response = self.delete(
             f"/themes/{theme_id}", str, transport_options=transport_options
         )
-        assert isinstance(response, str)
         return response
 
     # endregion
@@ -8243,7 +7944,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.User)
         return response
 
     # ### Get information about all users.
@@ -8276,7 +7976,6 @@ class Looker31SDK(api_methods.APIMethods):
             },
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Create a user with the specified information.
@@ -8297,7 +7996,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.User)
         return response
 
     # ### Search users
@@ -8386,7 +8084,6 @@ class Looker31SDK(api_methods.APIMethods):
             },
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Search for user accounts by name
@@ -8442,7 +8139,6 @@ class Looker31SDK(api_methods.APIMethods):
             },
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Get information about the user with a specific id.
@@ -8467,7 +8163,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.User)
         return response
 
     # ### Update information about the user with a specific id.
@@ -8490,7 +8185,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.User)
         return response
 
     # ### Delete the user with a specific id.
@@ -8508,7 +8202,6 @@ class Looker31SDK(api_methods.APIMethods):
         response = self.delete(
             f"/users/{user_id}", str, transport_options=transport_options
         )
-        assert isinstance(response, str)
         return response
 
     # ### Get information about the user with a credential of given type with specific id.
@@ -8560,7 +8253,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.User)
         return response
 
     # ### Email/password login information for the specified user.
@@ -8581,7 +8273,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.CredentialsEmail)
         return response
 
     # ### Email/password login information for the specified user.
@@ -8604,7 +8295,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.CredentialsEmail)
         return response
 
     # ### Email/password login information for the specified user.
@@ -8627,7 +8317,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.CredentialsEmail)
         return response
 
     # ### Email/password login information for the specified user.
@@ -8645,7 +8334,6 @@ class Looker31SDK(api_methods.APIMethods):
             str,
             transport_options=transport_options,
         )
-        assert isinstance(response, str)
         return response
 
     # ### Two-factor login information for the specified user.
@@ -8666,7 +8354,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.CredentialsTotp)
         return response
 
     # ### Two-factor login information for the specified user.
@@ -8689,7 +8376,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.CredentialsTotp)
         return response
 
     # ### Two-factor login information for the specified user.
@@ -8707,7 +8393,6 @@ class Looker31SDK(api_methods.APIMethods):
             str,
             transport_options=transport_options,
         )
-        assert isinstance(response, str)
         return response
 
     # ### LDAP login information for the specified user.
@@ -8728,7 +8413,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.CredentialsLDAP)
         return response
 
     # ### LDAP login information for the specified user.
@@ -8746,7 +8430,6 @@ class Looker31SDK(api_methods.APIMethods):
             str,
             transport_options=transport_options,
         )
-        assert isinstance(response, str)
         return response
 
     # ### Google authentication login information for the specified user.
@@ -8767,7 +8450,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.CredentialsGoogle)
         return response
 
     # ### Google authentication login information for the specified user.
@@ -8785,7 +8467,6 @@ class Looker31SDK(api_methods.APIMethods):
             str,
             transport_options=transport_options,
         )
-        assert isinstance(response, str)
         return response
 
     # ### Saml authentication login information for the specified user.
@@ -8806,7 +8487,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.CredentialsSaml)
         return response
 
     # ### Saml authentication login information for the specified user.
@@ -8824,7 +8504,6 @@ class Looker31SDK(api_methods.APIMethods):
             str,
             transport_options=transport_options,
         )
-        assert isinstance(response, str)
         return response
 
     # ### OpenID Connect (OIDC) authentication login information for the specified user.
@@ -8845,7 +8524,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.CredentialsOIDC)
         return response
 
     # ### OpenID Connect (OIDC) authentication login information for the specified user.
@@ -8863,7 +8541,6 @@ class Looker31SDK(api_methods.APIMethods):
             str,
             transport_options=transport_options,
         )
-        assert isinstance(response, str)
         return response
 
     # ### API 3 login information for the specified user. This is for the newer API keys that can be added for any user.
@@ -8886,7 +8563,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.CredentialsApi3)
         return response
 
     # ### API 3 login information for the specified user. This is for the newer API keys that can be added for any user.
@@ -8906,7 +8582,6 @@ class Looker31SDK(api_methods.APIMethods):
             str,
             transport_options=transport_options,
         )
-        assert isinstance(response, str)
         return response
 
     # ### API 3 login information for the specified user. This is for the newer API keys that can be added for any user.
@@ -8927,7 +8602,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### API 3 login information for the specified user. This is for the newer API keys that can be added for any user.
@@ -8950,7 +8624,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.CredentialsApi3)
         return response
 
     # ### Embed login information for the specified user.
@@ -8973,7 +8646,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.CredentialsEmbed)
         return response
 
     # ### Embed login information for the specified user.
@@ -8993,7 +8665,6 @@ class Looker31SDK(api_methods.APIMethods):
             str,
             transport_options=transport_options,
         )
-        assert isinstance(response, str)
         return response
 
     # ### Embed login information for the specified user.
@@ -9014,7 +8685,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Looker Openid login information for the specified user. Used by Looker Analysts.
@@ -9035,7 +8705,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.CredentialsLookerOpenid)
         return response
 
     # ### Looker Openid login information for the specified user. Used by Looker Analysts.
@@ -9053,7 +8722,6 @@ class Looker31SDK(api_methods.APIMethods):
             str,
             transport_options=transport_options,
         )
-        assert isinstance(response, str)
         return response
 
     # ### Web login session for the specified user.
@@ -9076,7 +8744,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.Session)
         return response
 
     # ### Web login session for the specified user.
@@ -9096,7 +8763,6 @@ class Looker31SDK(api_methods.APIMethods):
             str,
             transport_options=transport_options,
         )
-        assert isinstance(response, str)
         return response
 
     # ### Web login session for the specified user.
@@ -9117,7 +8783,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Create a password reset token.
@@ -9148,7 +8813,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"expires": expires, "fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.CredentialsEmail)
         return response
 
     # ### Get information about roles of a given user
@@ -9174,7 +8838,6 @@ class Looker31SDK(api_methods.APIMethods):
             },
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Set roles of the user with a specific id.
@@ -9197,7 +8860,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Get user attribute values for a given user.
@@ -9244,7 +8906,6 @@ class Looker31SDK(api_methods.APIMethods):
             },
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Store a custom value for a user attribute in a user's account settings.
@@ -9268,7 +8929,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.UserAttributeWithValue)
         return response
 
     # ### Delete a user attribute value from a user's account settings.
@@ -9293,7 +8953,6 @@ class Looker31SDK(api_methods.APIMethods):
             None,
             transport_options=transport_options,
         )
-        assert response is None
         return response
 
     # endregion
@@ -9318,7 +8977,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields, "sorts": sorts},
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Create a new user attribute
@@ -9348,7 +9006,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.UserAttribute)
         return response
 
     # ### Get information about a user attribute.
@@ -9369,7 +9026,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, models.UserAttribute)
         return response
 
     # ### Update a user attribute definition.
@@ -9392,7 +9048,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.UserAttribute)
         return response
 
     # ### Delete a user attribute (admin only).
@@ -9410,7 +9065,6 @@ class Looker31SDK(api_methods.APIMethods):
             str,
             transport_options=transport_options,
         )
-        assert isinstance(response, str)
         return response
 
     # ### Returns all values of a user attribute defined by user groups, in precedence order.
@@ -9437,7 +9091,6 @@ class Looker31SDK(api_methods.APIMethods):
             query_params={"fields": fields},
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Define values for a user attribute across a set of groups, in priority order.
@@ -9476,7 +9129,6 @@ class Looker31SDK(api_methods.APIMethods):
             body=body,
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # endregion
@@ -9497,7 +9149,6 @@ class Looker31SDK(api_methods.APIMethods):
             Sequence[models.Workspace],
             transport_options=transport_options,
         )
-        assert isinstance(response, list)
         return response
 
     # ### Get A Workspace
@@ -9544,7 +9195,6 @@ class Looker31SDK(api_methods.APIMethods):
             models.Workspace,
             transport_options=transport_options,
         )
-        assert isinstance(response, models.Workspace)
         return response
 
     # endregion

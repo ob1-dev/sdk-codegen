@@ -416,31 +416,11 @@ ${this.hooks.join('\n')}
         `${indent}warnings.warn("login_user behavior changed significantly ` +
         `in 21.4.0. See https://git.io/JOtH1")\n${methodCall}`
     }
-    let assertTypeName = this.methodReturnType(method)
-    switch (method.type.className) {
-      case 'ArrayType':
-        assertTypeName = 'list'
-        break
-      case 'HashType':
-        assertTypeName = 'dict'
-        break
-      default:
-        if (assertTypeName === 'Union[str, bytes]') {
-          assertTypeName = '(str, bytes)'
-        }
-    }
-    let assertion = `${indent}assert `
-    if (assertTypeName === this.nullStr) {
-      assertion += `response is ${this.nullStr}`
-    } else {
-      assertion += `isinstance(response, ${assertTypeName})`
-    }
     const returnStmt = `${indent}return response`
     return (
       `${methodCall}(\n` +
       `${this.bumper(indent)}${args}\n` +
       `${indent})\n` +
-      `${assertion}\n` +
       `${returnStmt}`
     )
   }

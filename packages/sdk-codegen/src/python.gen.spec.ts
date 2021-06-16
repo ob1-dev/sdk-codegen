@@ -389,7 +389,7 @@ result_format = self.encode_path_param(result_format)
       expect(actual).toEqual(expected)
     })
 
-    it('assert response is model add_group_group', () => {
+    it('add_group_group httpCall', () => {
       const method = apiTestModel.methods.add_group_group
       const expected = `response = self.post(
             f"/groups/{group_id}/groups",
@@ -397,24 +397,22 @@ result_format = self.encode_path_param(result_format)
             body=body,
             transport_options=transport_options
 )
-assert isinstance(response, models.Group)
 return response`
       const actual = gen.httpCall(indent, method)
       expect(actual).toEqual(expected)
     })
-    it('assert response is None delete_group_from_group', () => {
+    it('delete_group_from_group httpCall', () => {
       const method = apiTestModel.methods.delete_group_from_group
       const expected = `response = self.delete(
             f"/groups/{group_id}/groups/{deleting_group_id}",
             None,
             transport_options=transport_options
 )
-assert response is None
 return response`
       const actual = gen.httpCall(indent, method)
       expect(actual).toEqual(expected)
     })
-    it('assert response is list active_themes', () => {
+    it('active_themes httpCall', () => {
       const method = apiTestModel.methods.active_themes
       const expected = `response = self.get(
             f"/themes/active",
@@ -422,7 +420,6 @@ return response`
             query_params={"name": name, "ts": ts, "fields": fields},
             transport_options=transport_options
 )
-assert isinstance(response, list)
 return response`
       const actual = gen.httpCall(indent, method)
       expect(actual).toEqual(expected)
@@ -436,43 +433,39 @@ response = self.post(
             query_params={"associative": associative},
             transport_options=transport_options
 )
-assert isinstance(response, models.AccessToken)
 return response`
       const actual = gen.httpCall(indent, method)
       expect(actual).toEqual(expected)
     })
-    it('assert response is dict query_task_results', () => {
+    it('query_task_results httpCall', () => {
       const method = apiTestModel.methods.query_task_results
       const expected = `response = self.get(
             f"/query_tasks/{query_task_id}/results",
             str,
             transport_options=transport_options
 )
-assert isinstance(response, str)
 return response`
       const actual = gen.httpCall(indent, method)
       expect(actual).toEqual(expected)
     })
-    it('assert response is bytes render_task_results', () => {
+    it('render_task_results httpCall', () => {
       const method = apiTestModel.methods.render_task_results
       const expected = `response = self.get(
             f"/render_tasks/{render_task_id}/results",
             bytes,
             transport_options=transport_options
 )
-assert isinstance(response, bytes)
 return response`
       const actual = gen.httpCall(indent, method)
       expect(actual).toEqual(expected)
     })
-    it('assert response is bytes or str run_url_encoded_query', () => {
+    it('run_url_encoded_query httpCall', () => {
       const method = apiTestModel.methods.run_url_encoded_query
       const expected = `response = self.get(
             f"/queries/models/{model_name}/views/{view_name}/run/{result_format}",
             Union[str, bytes],  # type: ignore
             transport_options=transport_options
 )
-assert isinstance(response, (str, bytes))
 return response`
       const actual = gen.httpCall(indent, method)
       expect(actual).toEqual(expected)
