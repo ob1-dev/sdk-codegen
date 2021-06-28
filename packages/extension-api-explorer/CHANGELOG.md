@@ -1,5 +1,20 @@
 # Changelog
 
+## [21.8.0](https://www.github.com/looker-open-source/sdk-codegen/compare/extension-api-explorer-v21.8.0...extension-api-explorer-v21.8.0) (2021-06-28)
+
+
+### Features
+
+* syntax highlight application/sql responses ([#718](https://www.github.com/looker-open-source/sdk-codegen/issues/718)) ([28a1bbe](https://www.github.com/looker-open-source/sdk-codegen/commit/28a1bbedb04f500a12e2c5a0fe304919139e6638))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @looker/api-explorer bumped from ^0.9.9 to ^0.9.10
+    * @looker/run-it bumped from ^0.9.9 to ^0.9.10
+
 ## [21.8.0](https://www.github.com/looker-open-source/sdk-codegen/compare/extension-api-explorer-v21.6.1...extension-api-explorer-v21.8.0) (2021-06-17)
 
 

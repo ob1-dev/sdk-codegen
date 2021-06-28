@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.1.3](https://www.github.com/looker-open-source/sdk-codegen/compare/code-editor-v0.1.2...code-editor-v0.1.3) (2021-06-28)
+
+
+### Features
+
+* refactor Markdown out to @looker/code-editor ([#699](https://www.github.com/looker-open-source/sdk-codegen/issues/699)) ([f3c16e2](https://www.github.com/looker-open-source/sdk-codegen/commit/f3c16e2a162266545ba3086a0a1dddd0cb79195f))
+
 ### [0.1.2](https://www.github.com/looker-open-source/sdk-codegen/compare/code-editor-v0.1.1...code-editor-v0.1.2) (2021-06-16)
 
 

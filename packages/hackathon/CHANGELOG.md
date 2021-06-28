@@ -1,5 +1,12 @@
 # Changelog
 
+## [21.8.0](https://www.github.com/looker-open-source/sdk-codegen/compare/hackathon-v21.8.0...hackathon-v21.8.0) (2021-06-28)
+
+
+### Features
+
+* syntax highlight application/sql responses ([#718](https://www.github.com/looker-open-source/sdk-codegen/issues/718)) ([28a1bbe](https://www.github.com/looker-open-source/sdk-codegen/commit/28a1bbedb04f500a12e2c5a0fe304919139e6638))
+
 ## [21.8.0](https://www.github.com/looker-open-source/sdk-codegen/compare/hackathon-v21.6.1...hackathon-v21.8.0) (2021-06-17)
 
 
